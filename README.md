@@ -8,26 +8,19 @@
 
 #define MYSQL_DEBUG_PORT Serial
 #define _MYSQL_LOGLEVEL_ 1
-#define USING_HOST_NAME true
-
-#if USING_HOST_NAME
-  #define SERVER "SEU SERVER"
-#else
-  IPAddress SERVER(192, 168, 2, 112);
-#endif
 
 #define SERVER_PORT 3306
+#define SERVER "SEU SERVER"
 #define DATABASE "SEU DATABASE"
 #define TABLE "SUA TABLE"
+#define MYSQL_USER "SEU USUÁRIO MYSQL"
+#define MYSQL_PASSWORD "SUA SENHA MYSQL
 
 MySQL_Connection conn((Client *)&client);
 MySQL_Query *query_mem;
 
 #define WIFI_SSID "SUA REDE WIFI"
 #define WIFI_PASSWORD "SUA SENHA WIFI"
-
-#define MYSQL_USER "SEU USUÁRIO MYSQL"
-#define MYSQL_PASSWORD "SUA SENHA MYSQL"
 
 String INSERT_SQL;
 
