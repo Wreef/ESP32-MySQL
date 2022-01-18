@@ -14,7 +14,7 @@
 #define DATABASE "SEU DATABASE"
 #define TABLE "SUA TABLE"
 #define MYSQL_USER "SEU USUÁRIO MYSQL"
-#define MYSQL_PASSWORD "SUA SENHA MYSQL
+#define MYSQL_PASSWORD "SUA SENHA MYSQL"
 
 MySQL_Connection conn((Client *)&client);
 MySQL_Query *query_mem;
