@@ -175,19 +175,94 @@ Em "MYSQL_USER" e "MYSQL_PASSWORD" você irá utilizar os dados do usuário.
 #define MYSQL_PASSWORD "SUA SENHA MYSQL" // Senha definida ao criar o banco de dados
 ```
 
+Configurações para conexão com o MySQL.
 
+```cpp
+MySQL_Connection conn((Client *)&client);
+MySQL_Query *query_mem;
+```
 
+Nessa parte do código é necessário passas as informações da sua rede WiFi.
 
+```cpp
+#define WIFI_SSID "SUA REDE WIFI" // Nome da sua rede WiFi
+#define WIFI_PASSWORD "SUA SENHA WIFI" // Senha da sua rede WiFi
+```
 
+Na função setup iremos realizar a conexão com o WiFi e inicial o Serial.
 
+```cpp
+void setup(){
+  
+  Serial.begin(115200);  // Inicio do Serial
+  
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD); // Nome e senha WiFi
+  Serial.print("Conectando");
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+    
+  Serial.println("\nConectado:");
+  Serial.println(WiFi.localIP());
+  delay(500);
+}
+```
 
+Na função loop iremos criar as variáveis aleatórias com a função "random()", realizar a conexão com o MySQL e enviar as variáveis para a tabela.
 
+```cpp
+void loop(){
 
+  int viVar1 = random(0, 101); // Variável aleatória 1
+  int viVar2 = random(0, 101); // Variável aleatória 2
+  int viVar3 = random(0, 101); // Variável aleatória 3
 
+  INSERT_SQL = String("INSERT INTO ") + DATABASE + "." + TABLE  // Envio de informações para o MySQL
+               + " (var1, var2, var3) VALUES (" 
+               +  String(viVar1)+ "," 
+               +  String(viVar2) + "," 
+               +  String(viVar3) + ")";
 
+  MYSQL_DISPLAY("Conectando...");
 
+  if (conn.connect(SERVER, SERVER_PORT, MYSQL_USER, MYSQL_PASSWORD)){ // Conexão com o banco de dados
+    delay(500);
+    
+    InsertMySQL(); // Função de envio de informações
+    
+    conn.close();
+  } 
+  else {
+    MYSQL_DISPLAY("\nConexão falhou.");
+  }
+ 
+  delay(60000); // Intervalo de 60 segundos
+}
+```
 
+No final do código iremos definir a função "InsertMySQL()". Ela é responsável por verificar a conexão com o MySQL e pelo envio da informação.
 
+```cpp
+void InsertMySQL(){
+
+  MySQL_Query query_mem = MySQL_Query(&conn);
+
+  if (conn.connected()){ // Verifica a conexão
+    MYSQL_DISPLAY(INSERT_SQL); // Imprime no Serial o Insert
+    if (!query_mem.execute(INSERT_SQL.c_str())){ // Realiza o envio
+      MYSQL_DISPLAY("Insert falhou.");
+      }
+    else{
+      MYSQL_DISPLAY("Insert concluído.");
+    }
+  }
+  else{
+    MYSQL_DISPLAY("Disconectado do servidor.");
+  }
+}
+```
 
 ## Preparando a IDE do Arduino para utilizar o ESP32.
 Em sua Arduino IDE vá em: Arquivo > Preferências
