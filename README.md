@@ -71,7 +71,7 @@ void loop(){
 
   MYSQL_DISPLAY("Conectando...");
 
-  if (conn.connectNonBlocking(SERVER, SERVER_PORT, MYSQL_USER, MYSQL_PASSWORD) != RESULT_FAIL){
+  if (conn.connect(SERVER, SERVER_PORT, MYSQL_USER, MYSQL_PASSWORD)){
     delay(500);
     
     InsertMySQL();
