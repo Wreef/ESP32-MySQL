@@ -1,6 +1,29 @@
 ![logo](https://i.ibb.co/YthtbLh/Giifff-mid.gif)
 ***
 # Comunicação com MySQL: ESP32
+Neste guia, iremos montar um datalogger usando um banco de dados MySQL.
+***
+## Contextualização
+Iremos criar três variáveis que mudam os valores de forma randômica. Os dados serão enviados para um banco de dados MySQL. Os dados serão atualizados automaticamente, permitindo, além do armazenamento, a visualização em tempo real.
+
+## Requerimentos
+- Placa ESP32;
+- Banco de dados (disponiblizarei um guia para criar um banco MySQL numa Raspberry Pi).
+
+## Biblioteca MySQL
+Para utilizar o sensor DHT é necessário instalar bibliotecas.
+
+Em sua Arduino IDE vá em: Sketch > Incluir Biblioteca > Gerenciar Bibliotecas
+
+<p align="center">
+  <img src="https://i.ibb.co/xC958xP/preparando-5.png" alt="5"/>
+</p>
+
+Pesquise por "MySQL_MariaDB_Generic", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar").
+
+<p align="center">
+  <img src="https://i.ibb.co/frzf8ds/library.png" alt="5"/>
+</p>
 
 ## Código SQL
 
