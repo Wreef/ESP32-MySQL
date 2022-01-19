@@ -1,6 +1,6 @@
 ![logo](https://i.ibb.co/YthtbLh/Giifff-mid.gif)
 ***
-# Comunicação com MySQL com Host no Heroku: ESP32
+# Comunicação com MySQL: ESP32
 
 ## Código SQL
 
