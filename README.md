@@ -189,7 +189,7 @@ Nessa parte do código é necessário passas as informações da sua rede WiFi.
 #define WIFI_PASSWORD "SUA SENHA WIFI" // Senha da sua rede WiFi
 ```
 
-Na função setup iremos realizar a conexão com o WiFi e inicial o Serial.
+Na função setup iremos realizar a conexão com o WiFi e iniciar o Serial.
 
 ```cpp
 void setup(){
