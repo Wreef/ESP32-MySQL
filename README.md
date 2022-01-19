@@ -169,5 +169,5 @@ Esse tipo de projeto é bastante útil quando se utiliza o ESP32 em monitorament
 
 # Até mais!
 <p align="center">
-  <img src="https://i.ibb.co/4WmGpqx/sqlbanco.png" alt="5"/>
+  <img src="https://i.ibb.co/SxH2pG7/php3.png" alt="5"/>
 </p>
