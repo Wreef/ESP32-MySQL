@@ -141,6 +141,54 @@ void InsertMySQL(){
 }
 ```
 
+## Entendendo o Código
+Inicialmente importamos as bibliotecas necessárias.
+
+```cpp
+#include <MySQL_Generic.h> // MySQL
+#include <WiFi.h> // WiFi
+```
+
+Algumas definições da biblioteca do MySQL para DEBUG.
+
+```cpp
+#define MYSQL_DEBUG_PORT Serial
+#define _MYSQL_LOGLEVEL_ 1
+```
+
+Nessa parte do código é necessário definir parâmetros do seu banco de dados.
+
+Em "SERVER" cole o IP do seu servidor em rede local.
+
+Em "DATABASE" cole o nome do seu banco de dados. No exemplo usei o nome "ESP32_Datalogger".
+
+Em "TABLE" cole o nome da sua tabela. No exemplo usei o nome "banco".
+
+Em "MYSQL_USER" e "MYSQL_PASSWORD" você irá utilizar os dados do usuário.
+
+```cpp
+#define SERVER_PORT 3306
+#define SERVER "SEU SERVER" // Exemplo: 192.168.0.100
+#define DATABASE "SEU DATABASE" // Exemplo: ESP32_Datalogger
+#define TABLE "SUA TABLE" // Exemplo: banco
+#define MYSQL_USER "SEU USUÁRIO MYSQL" // Exemplo: root
+#define MYSQL_PASSWORD "SUA SENHA MYSQL" // Senha definida ao criar o banco de dados
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Preparando a IDE do Arduino para utilizar o ESP32.
 Em sua Arduino IDE vá em: Arquivo > Preferências
 
