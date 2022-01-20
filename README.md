@@ -8,7 +8,7 @@ Iremos criar três variáveis que mudam os valores de forma randômica. Os dados
 
 ## Requerimentos
 - Placa ESP32;
-- Banco de dados (disponiblizarei um guia para criar um banco MySQL numa Raspberry Pi).
+- Banco de dados ([Banco de Dados MySQL: Raspberry Pi](https://github.com/Wreef/RaspberryPi-MySQL)).
 
 ## Biblioteca MySQL
 Para realizar a comunicação com o MySQL é necessário instalar uma biblioteca.
